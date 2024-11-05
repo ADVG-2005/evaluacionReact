@@ -41,12 +41,10 @@ export const Actividades = () => {
         'Chorizo'
       ];
     
-      // Función para actualizar localStorage
       const actualizarLocalStorage = (clave, datos) => {
         localStorage.setItem(clave, JSON.stringify(datos));
       };
     
-      // Agregar actividad
       const agregarActividad = () => {
         if (actividadSeleccionada && minutos) {
           const nuevasActividades = [
@@ -60,7 +58,6 @@ export const Actividades = () => {
         }
       };
     
-      // Agregar egreso
       const agregarEgreso = () => {
         if (actividadEgreso && costo) {
           const nuevosEgresos = [
@@ -74,7 +71,6 @@ export const Actividades = () => {
         }
       };
     
-      // Agregar venta
       const agregarVenta = () => {
         if (productoSeleccionado && precio) {
           const nuevasVentas = [
