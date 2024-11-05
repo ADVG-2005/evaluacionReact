@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 export const DatosAgua = () => {
     const [pruebas, setPruebas] = useState(() => {
-        // Cargar pruebas desde localStorage al iniciar la aplicación
         return JSON.parse(localStorage.getItem('pruebas')) || [];
       });
       
@@ -36,7 +35,6 @@ export const DatosAgua = () => {
           plomo: prueba.plomo <= 0.01 ? prueba.plomo : 0.01,
         };
     
-        // Comprobar alertas
         if (prueba.turbidez >= 1) nuevasAlertas.push('Turbidez fuera de rango');
         if (prueba.nitratos > 10) nuevasAlertas.push('Nitratos fuera de rango');
         if (prueba.fluoruros > 1.5) nuevasAlertas.push('Fluoruros fuera de rango');
@@ -68,14 +66,12 @@ export const DatosAgua = () => {
           },
         ]);
     
-        // Guardar pruebas en localStorage
         if (pruebas.length < 5) {
           const nuevasPruebas = [...pruebas, nuevaPrueba];
           setPruebas(nuevasPruebas);
           localStorage.setItem('pruebas', JSON.stringify(nuevasPruebas));
         }
     
-        // Resetear entradas
         setEntradas({
           turbidez: '',
           nitratos: '',
